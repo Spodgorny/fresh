@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Baloo Chettan 2";
+  src: url("../fonts/BalooChettan2-Medium.woff2") format("woff2");
+  src: url("../fonts/BalooChettan2-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Baloo Chettan 2";
+  src: url("../fonts/BalooChettan2-Regular.woff2") format("woff2");
+  src: url("../fonts/BalooChettan2-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Baloo Chettan 2";
+  src: url("../fonts/BalooChettan2-SemiBold.woff2") format("woff2");
+  src: url("../fonts/BalooChettan2-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font: 400 18px/1.6 "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  color: rgba(10, 25, 2, 0.7);
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(10, 25, 2, 0.7);
+  transition: all 0.3s;
+}
+
+.container {
+  max-width: 1178px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+}
+
+.header {
+  padding: 30px 0;
+}
+.header__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo img {
+  max-width: 164px;
+  max-height: 65px;
+}
+.header__nav-list {
+  display: flex;
+  align-items: center;
+}
+.header__nav-item {
+  padding: 0 17px;
+}
+
+.purpose {
+  padding: 120px 0;
+}
+.purpose__wrap {
+  display: flex;
+}
+.purpose__wrap .col1 {
+  width: 50%;
+  display: inline-block;
+  padding: 0 15px;
+  letter-spacing: normal;
+}
+.purpose__wrap .col1 p {
+  font-size: 18px;
+}
+.purpose__wrap h1 {
+  color: #0A1902;
+  font-size: 49px;
+  line-height: 1.3;
+  padding-bottom: 17px;
+}
+.purpose__wrap .col2 {
+  width: 50%;
+  display: inline-block;
+  padding: 15px 15px;
+  letter-spacing: normal;
+  counter-reset: section;
+}
+.purpose__wrap ::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+.purpose__wrap .purpose-list {
+  font-family: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  padding-bottom: 25px;
+}
+.purpose__wrap .purpose-list li:nth-child(1)::before {
+  counter-increment: section;
+  content: counter(section);
+  color: #59BE29;
+  background: #fff;
+  margin: 5px 10px;
+  box-shadow: 0px 10px 20px rgba(22, 52, 7, 0.05);
+  width: 67px;
+  height: 67px;
+  border-radius: 50px;
+  float: left;
+}
+.purpose__wrap .purpose-list li:nth-child(1) {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.5;
+  color: #0A1902;
+}
+.purpose__wrap .purpose-list li:nth-child(2)::before {
+  font-size: 18px;
+  font-weight: normal;
+  opacity: 0.7;
+  padding-left: 55px;
+  margin-left: 35px;
+}
+.purpose__wrap .purpose-list li:nth-child(2) {
+  opacity: 0.7;
+}
+.purpose__wrap .purpose-list2 li:nth-child(1) {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.5;
+  color: #0A1902;
+}
+.purpose__wrap .purpose-list2 li:nth-child(1)::before {
+  counter-increment: section;
+  content: counter(section);
+  color: #59BE29;
+  background: #fff;
+  margin: 5px 10px;
+  box-shadow: 0px 10px 20px rgba(22, 52, 7, 0.05);
+  width: 67px;
+  height: 67px;
+  border-radius: 50px;
+  float: left;
+}
+.purpose__wrap .purpose-list2 li:nth-child(2)::before {
+  font-size: 18px;
+  font-weight: normal;
+}
+.purpose__wrap .purpose-list2 li:nth-child(2) {
+  opacity: 0.7;
+  padding-top: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
