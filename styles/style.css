@@ -63,7 +63,57 @@ a {
 }
 
 .btn {
+  font-family: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 55px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #59BE29;
+  background-color: #59BE29;
+  box-shadow: 0 10px 20px rgba(22, 52, 7, 0.1);
+  border-radius: 20px 80px;
+  padding: 5px 44px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0 10px 20px rgba(22, 52, 7, 0.4);
+}
+.btn--ghost {
+  background-color: #fff;
+  color: #59BE29;
+  border: 1px solid rgba(89, 190, 41, 0.3);
+}
+.btn--normal {
+  height: 59px;
+  padding: 5 px 30px;
+  border-radius: 10px;
+}
+
+input {
+  font-family: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 10px 20px rgba(22, 52, 7, 0.05);
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  outline: none;
+  height: 59px;
+  width: 100%;
   display: block;
+  padding: 0 30px;
+  transition: all 0.3s;
+}
+input:focus {
+  box-shadow: 0 10px 20px rgba(22, 52, 7, 0.2);
+}
+input::placeholder {
+  color: rgba(10, 25, 2, 0.2);
 }
 
 .header {
@@ -73,6 +123,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header__logo {
+  line-height: 0;
 }
 .header__logo img {
   max-width: 164px;
@@ -84,6 +137,31 @@ a {
 }
 .header__nav-item {
   padding: 0 17px;
+  font-weight: 500;
+}
+.header__nav-item a {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4px;
+}
+.header__nav-item a:hover {
+  color: #0A1902;
+}
+.header__nav-item a::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+.header__nav-item--active a {
+  color: #0A1902;
+}
+.header__nav-item--active a::before {
+  background-color: #59BE29;
 }
 
 .purpose {
@@ -183,7 +261,7 @@ a {
 }
 
 .fruits {
-  padding-top: 70px;
+  padding: 70px 0;
   padding-bottom: 100%;
   position: relative;
 }
@@ -192,6 +270,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  margin: -15px;
 }
 .fruits__wrap::before {
   position: absolute;
@@ -201,6 +280,7 @@ a {
   top: 0;
   width: 1px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(89, 190, 41, 0.2) 50%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
 }
 .fruits__wrap::after {
   position: absolute;
@@ -212,6 +292,7 @@ a {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(89, 190, 41, 0.2) 50%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
 }
 .fruits__row {
+  display: flex;
   position: relative;
 }
 .fruits__row::before {
@@ -226,19 +307,378 @@ a {
 .fruits__row:last-child::before {
   display: none;
 }
-.fruits__row__col {
+.fruits__col {
   width: 33.3333333333%;
-  display: inline-block;
-  position: relative;
-  padding-bottom: 100%;
+  padding: 15px;
 }
-.fruits__row__col img {
+.fruits__fruits__image {
+  padding-bottom: 100%;
+  position: relative;
+}
+.fruits__fruits__image img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hero {
+  padding: 86px 0 60px;
+}
+.hero__wrap {
+  display: flex;
+}
+.hero__info {
+  width: 50%;
+  padding-right: 35px;
+  min-width: 530px;
+}
+.hero__img {
+  width: 50%;
+  position: relative;
+}
+.hero__label {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: 1.1;
+  text-transform: uppercase;
+  color: #0A1902;
+}
+.hero__title {
+  font: 600 121px/0.9 "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  color: #59BE29;
+  margin-bottom: 35px;
+}
+.hero__descr {
+  margin-bottom: 25px;
+}
+.hero__btns {
+  display: flex;
+}
+.hero__btn:not(:last-child) {
+  margin-right: 27px;
+}
+.hero__img-wrap {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+  right: -22%;
+  width: 150%;
+}
+.hero__img-bg {
+  width: 100%;
+}
+.hero__decor-1, .hero__decor-2, .hero__decor-3 {
+  position: absolute;
+}
+.hero__decor-1 {
+  top: 15%;
+  left: 15%;
+  max-width: 175px;
+  max-height: 109px;
+}
+.hero__decor-2 {
+  top: 15%;
+  right: 17%;
+  max-width: 119px;
+  max-height: 83px;
+}
+.hero__decor-3 {
+  top: 50%;
+  left: 22%;
+  max-width: 107px;
+  max-height: 56px;
+}
+
+.statistics {
+  padding: 60px 0;
+}
+.statistics__wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 -20px;
+}
+.statistics__col {
+  width: 50%;
+  padding: 0 20px;
+}
+.statistics__img {
+  max-width: 100%;
+}
+.statistics__title {
+  font: 600 49px/1.3 "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  color: #0A1902;
+  max-width: 452px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.statistics__title::before {
+  position: absolute;
+  content: "";
+  width: 130px;
+  height: 65px;
+  background-image: url(../img/decor-mango.png);
+  background-size: cover;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.statistics__descr {
+  margin-bottom: 46px;
+}
+.statistics__box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -18px -20px;
+  counter-reset: section;
+}
+.statistics__item {
+  width: 50%;
+  padding: 18px 20px;
+  position: relative;
+  padding-left: 108px;
+}
+.statistics__item::before {
+  position: absolute;
+  counter-increment: section;
+  content: counter(section);
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(22, 52, 7, 0.05);
+  color: #59BE29;
+  font-size: 35px;
+  line-height: 1.4;
+  font-weight: 700;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statistics__number {
+  font: 600 49px/1.3 "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #82CD5E;
+  display: block;
+  max-width: 136px;
+  border-bottom: 2px solid #59BE29;
+}
+
+.subscribe {
+  padding: 70px 0 50px;
+}
+.subscribe__wrap {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #fff;
+  position: relative;
+}
+.subscribe__wrap::before {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 30px;
   width: 100%;
   height: 100%;
+  background-color: rgba(14, 35, 4, 0.05);
+  filter: blur(100px);
+  border-radius: 30px;
+  z-index: -1;
+}
+.subscribe__col {
+  width: 50%;
+  padding: 0 20px;
+}
+.subscribe__col--img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe__col--info {
+  padding: 70px 20px;
+}
+.subscribe__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.subscribe__title {
+  font: 600 49px/1.3 "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  color: #0A1902;
+  margin-bottom: 25px;
+}
+.subscribe__descr {
+  margin-bottom: 25px;
+}
+.subscribe__form {
+  display: flex;
+}
+.subscribe__message {
+  margin-right: 30px;
+  max-width: 258px;
+}
+
+.berries {
+  padding: 60px 0;
+}
+.berries__wrap {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 -15px;
+  background-color: #fff;
+}
+.berries__col {
+  width: 33.33%;
+  padding: 0 15px;
+  position: relative;
+}
+.berries__card {
+  position: relative;
+  display: block;
+  transition: all 0.3s;
+}
+.berries__card:hover {
+  border-radius: 30px;
+  transform: scale(1.1);
+  box-shadow: 0 6px 35px rgba(0, 0, 0, 0.08);
+}
+.berries__image-link {
+  position: relative;
+  display: block;
+  padding-bottom: 70%;
+}
+.berries__image-link img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.berries__link {
+  font: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #0A1902;
+  padding-bottom: 5px;
+  display: block;
+}
+.berries__dollar {
+  font: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #59BE29;
+  font-size: 35px;
+}
+.berries__info {
+  font-weight: 400;
+  font-size: 16px;
+  align-items: center;
+  display: block;
+  padding: 0 45px;
+  padding-bottom: 38px;
+}
+.berries__btn {
+  padding-bottom: 45px;
+}
+
+.footer {
+  padding: 70px 0;
+}
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__col {
+  padding: 0 15px;
+}
+.footer__logo {
+  padding-bottom: 26px;
+  line-height: 0;
+}
+.footer__logo img {
+  max-width: 164px;
+  max-height: 65px;
+}
+.footer__text {
+  font-weight: 400;
+  font-size: 15px;
+  max-width: 339px;
+  max-height: 71px;
+  display: block;
+  padding-bottom: 50px;
+  line-height: 1.6;
+}
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+.footer__nav-item {
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.footer__glav {
+  display: flex;
+  font-weight: 500;
+  font-size: 22px;
+  color: #0A1902;
+  max-width: 400px;
+}
+.footer__nazv {
+  width: 50%;
+  padding-left: 8px;
+}
+.footer__nav-link:hover {
+  color: #59BE29;
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.footer__social::before {
+  position: absolute;
+  content: "";
+  width: 201px;
+  height: 245px;
+  background-image: url(../img/cherry.png);
+  background-size: cover;
+  right: 0;
+  left: 140px;
+  top: -70px;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.footer__social-item {
+  padding-right: 0;
+}
+.footer__social-item:last-child {
+  padding-right: 0;
+}
+.footer__social-link img {
+  transition: all 0.3s;
+}
+.footer__social-link img:hover {
+  border-radius: 20px;
+  transform: scale(1.1);
+}
+.footer__label {
+  color: #0A1902;
+  font-weight: 500;
+  font-size: 22px;
+  padding-top: 35px;
+  padding-bottom: 8px;
+  padding-left: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
